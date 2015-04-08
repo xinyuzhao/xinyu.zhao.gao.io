@@ -29,6 +29,12 @@ body {
   background-position: center;
 }
 
+.img-logo {
+  margin-top: 16px;
+  height: 72px;
+  margin-right: 32px;
+}
+
 .book .page{
   -webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
   -moz-box-shadow:0 0 20px rgba(0,0,0,0.2);

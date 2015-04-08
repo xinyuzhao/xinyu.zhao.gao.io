@@ -6,7 +6,7 @@ $(function() {
   var pageNumbers = {};
   var numberToBtn = [];
   $('.buttons').children().map(function(_,btn) {
-    var id = $(btn).attr('book-page');
+    var id = $(btn).attr('href');
     var number = $(id).index() + 1;
     pageNumbers[id] = number;
     numberToBtn[number] = btn;
@@ -21,7 +21,7 @@ $(function() {
   });
 
   $('.buttons').children().click(function() {
-    var id = $(this).attr('book-page');
+    var id = $(this).attr('href');
     $('#book').turn("page", pageNumbers[id]);
   });
 
@@ -31,5 +31,8 @@ $(function() {
     $(numberToBtn[number]).addClass('btn-primary');
   });
 
+  if (window.location.hash) {
+    $('#book').turn('page', pageNumbers[window.location.hash]);
+  }
 
 });
